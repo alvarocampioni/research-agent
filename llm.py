@@ -15,26 +15,32 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class LLMError(Exception):
-    """Falha na chamada ao LLM ou saida que nao respeita o schema."""
+    pass
 
 
 class LLMClient:
     def __init__(self, settings: Settings, chat_model=None):
         self._settings = settings
-        if chat_model is None:
-            chat_model = ChatOpenAI(
-                model=settings.llm_model,
-                api_key=settings.llm_api_key,
-                base_url=settings.llm_base_url,
-                temperature=settings.llm_temperature,
-                timeout=settings.timeout_seconds,
-                max_retries=2,
-            )
         self._model = chat_model
         self.calls: list[LLMCall] = []
 
+    def _ensure_model(self):
+        if self._model is not None:
+            return self._model
+        self._model = ChatOpenAI(
+            model=self._settings.llm_model,
+            api_key=self._settings.llm_api_key,
+            base_url=self._settings.llm_base_url,
+            temperature=self._settings.llm_temperature,
+            timeout=self._settings.timeout_seconds,
+            max_retries=2,
+        )
+        return self._model
+
     def generate(self, schema: type[T], system: str, user: str, step: str) -> T:
-        structured = self._model.with_structured_output(schema, include_raw=True)
+        model = self._ensure_model()
+        structured = model.with_structured_output(schema, include_raw=True)
+        # normaliza erros especificos de cada provedor para a interface do projeto
         try:
             out = structured.invoke([("system", system), ("human", user)])
         except Exception as exc:

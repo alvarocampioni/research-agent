@@ -44,14 +44,14 @@ class AgentResult(BaseModel):
 
 
 class ResearchPlan(BaseModel):
-    info_needed: list[str] = Field(min_length=1)  # o que precisa ser descoberto
+    info_needed: list[str] = Field(min_length=1)
     queries: list[str] = Field(min_length=1)
 
 
 class Analysis(BaseModel):
     relevant_findings: list[str] = Field(default_factory=list)
-    gaps: list[str] = Field(default_factory=list)            # informação faltando
-    contradictions: list[str] = Field(default_factory=list)  # fontes incoerentes
+    gaps: list[str] = Field(default_factory=list)
+    contradictions: list[str] = Field(default_factory=list)
 
 
 class Evaluation(BaseModel):

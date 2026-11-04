@@ -1,20 +1,17 @@
-"""Ferramenta de busca na web (Tavily). Única porta de entrada para a internet."""
 import httpx
 
 from app.models.search import SearchArgs, SearchResult
 
 TAVILY_URL = "https://api.tavily.com/search"
-MAX_CONTENT_CHARS = 1500  # limita o texto de cada resultado (custo e injeção)
+MAX_CONTENT_CHARS = 1500
 
 
 class SearchError(Exception):
-    """Falha ao buscar (rede, API key, resposta inválida)."""
-
+    pass
 
 class WebSearchTool:
     def __init__(self, api_key: str, client: httpx.Client | None = None, timeout: float = 20.0):
         self._api_key = api_key
-        # `client` injetável permite testar com httpx.MockTransport, sem rede
         self._client = client or httpx.Client(timeout=timeout)
 
     def search(self, args: SearchArgs) -> list[SearchResult]:
@@ -34,7 +31,7 @@ class WebSearchTool:
         results = []
         for item in raw[: args.max_results]:
             if not item.get("url"):
-                continue  # sem URL não há como citar
+                continue
             results.append(SearchResult(
                 title=item.get("title") or item["url"],
                 url=item["url"],

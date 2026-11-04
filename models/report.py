@@ -1,4 +1,4 @@
-"""Modelo do relatorio final, igual para os dois agentes."""
+"""Separa achados citados de inferências para permitir validação de citações."""
 from pydantic import BaseModel, Field
 
 
@@ -9,6 +9,7 @@ class Source(BaseModel):
 
 
 class Finding(BaseModel):
+    """Afirmação sustentada por fontes recuperadas."""
     text: str
     source_ids: list[int] = Field(min_length=1)
 
