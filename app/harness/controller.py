@@ -8,8 +8,6 @@ from app.harness.budget import BudgetExceeded, BudgetManager
 from app.harness.telemetry import Telemetry
 from app.llm import LLMClient
 from app.tools.search import WebSearchTool
-from app.agents.interactive_agent import InteractiveAgent
-from app.agents.simple_agent import SimpleAgent
 
 
 class ExecutionController:
@@ -43,5 +41,8 @@ class ExecutionController:
             self.telemetry.record("finished", elapsed_seconds=elapsed)
 
     def run_question(self, agent_name: str, question: str) -> Any:
+        from app.agents.interactive_agent import InteractiveAgent
+        from app.agents.simple_agent import SimpleAgent
+
         agent_cls = {"a": SimpleAgent, "agent_a": SimpleAgent, "b": InteractiveAgent, "agent_b": InteractiveAgent}[agent_name.lower()]
         return self.run(agent_cls, question)
