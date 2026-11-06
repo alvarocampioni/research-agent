@@ -1,0 +1,283 @@
+[
+  {
+    "id": "question_01",
+    "question": "Compare PostgreSQL e MongoDB em termos de modelo de dados, consistência e escalabilidade.",
+    "expected_criteria": [
+      "modelo de dados relacional versus documental",
+      "consistência e transações",
+      "escalabilidade horizontal e casos de uso"
+    ],
+    "important_facts": [
+      "PostgreSQL é relacional e usa SQL",
+      "MongoDB é orientado a documentos",
+      "PostgreSQL prioriza consistência forte",
+      "MongoDB oferece flexibilidade e escalabilidade horizontal"
+    ]
+  },
+  {
+    "id": "question_02",
+    "question": "Explique as diferenças entre LangChain, LlamaIndex e Haystack para desenvolvimento de aplicações com LLM.",
+    "expected_criteria": [
+      "abordagem de orquestração",
+      "integração de dados e retrieval",
+      "casos de uso e limitações"
+    ],
+    "important_facts": [
+      "LangChain foca em orquestração de agentes e cadeias",
+      "LlamaIndex foca em indexação e consulta sobre dados",
+      "Haystack foca em pipelines de processamento e retrieval"
+    ]
+  },
+  {
+    "id": "question_03",
+    "question": "Quais são as principais vantagens e desvantagens do uso de SQLite em projetos pequenos e médios?",
+    "expected_criteria": [
+      "simplicidade e baixo custo",
+      "limitações em escala e concorrência",
+      "adequação para protótipos e aplicações leves"
+    ],
+    "important_facts": [
+      "SQLite é leve e sem processo servidor",
+      "funciona bem para protótipos e aplicações menores",
+      "não é ideal para cargas de escrita muito concorrentes"
+    ]
+  },
+  {
+    "id": "question_04",
+    "question": "Compare APIs REST e GraphQL em termos de flexibilidade, sobrecarregamento de dados e casos de uso.",
+    "expected_criteria": [
+      "fexibilidade para clientes",
+      "over-fetching e under-fetching",
+      "casos de uso ideais"
+    ],
+    "important_facts": [
+      "REST usa endpoints fixos",
+      "GraphQL permite consultas específicas",
+      "GraphQL pode reduzir payloads, mas aumenta complexidade do servidor"
+    ]
+  },
+  {
+    "id": "question_05",
+    "question": "Explique por que Python é amplamente usado em IA e como ele se compara a JavaScript para dados e modelos de linguagem.",
+    "expected_criteria": [
+      "ecossistema de bibliotecas",
+      "produtividade e interoperabilidade",
+      "trade-offs com JavaScript"
+    ],
+    "important_facts": [
+      "Python tem ecossistema rico em ML e IA",
+      "JavaScript é forte para frontend e integração web",
+      "Python ainda domina pesquisa e prototipagem"
+    ]
+  },
+  {
+    "id": "question_06",
+    "question": "Quais são os principais trade-offs entre armazenamento em memória e banco de dados persistente em sistemas web?",
+    "expected_criteria": [
+      "velocidade versus durabilidade",
+      "custo e complexidade",
+      "quando usar cada abordagem"
+    ],
+    "important_facts": [
+      "memória é mais rápida",
+      "persistência protege dados em reinicialização",
+      "bancos persistentes são necessários para dados duráveis"
+    ]
+  },
+  {
+    "id": "question_07",
+    "question": "Compare Kubernetes e Docker Compose para desenvolvimento e implantação de aplicações containerizadas.",
+    "expected_criteria": [
+      "escala e orquestração",
+      "complexidade operacional",
+      "uso para desenvolvimento e produção"
+    ],
+    "important_facts": [
+      "Docker Compose é simples para ambientes locais",
+      "Kubernetes escala e orquestra aplicações distribuídas",
+      "Kubernetes é mais complexo de operar"
+    ]
+  },
+  {
+    "id": "question_08",
+    "question": "Explique como cache melhora desempenho em sistemas distribuidos e quais cuidados de consistência ele exige.",
+    "expected_criteria": [
+      "redução de latência",
+      "impacto em consistência",
+      "estratégias e limites"
+    ],
+    "important_facts": [
+      "cache reduz a carga em serviços e bancos",
+      "dados em cache podem ficar desatualizados",
+      "é preciso escolher política de invalidation e TTL"
+    ]
+  },
+  {
+    "id": "question_09",
+    "question": "Compare SQL e NoSQL para sistemas transacionais e análise de dados em larga escala.",
+    "expected_criteria": [
+      "consistência e schema",
+      "escalabilidade e consultas",
+      "aplicações ideais"
+    ],
+    "important_facts": [
+      "SQL é bom para transações e consistência",
+      "NoSQL escala melhor em certos workloads",
+      "consultas analíticas podem exigir diferentes modelos"
+    ]
+  },
+  {
+    "id": "question_10",
+    "question": "Quais são as principais diferenças entre filas de mensagens e RPC síncrono em arquiteturas de software?",
+    "expected_criteria": [
+      "assincronicidade",
+      "acoplamento e tolerância a falhas",
+      "quando usar cada modelo"
+    ],
+    "important_facts": [
+      "RPC síncrono espera resposta imediata",
+      "filas desacoplam produtores e consumidores",
+      "filas ajudam em picos de carga e processamento assíncrono"
+    ]
+  },
+  {
+    "id": "question_11",
+    "question": "Como funciona o processo de deploy em plataformas serverless e qual a relação com funções sem servidor?",
+    "expected_criteria": [
+      "execução sob demanda",
+      "dimensionamento automático",
+      "limitações e custos"
+    ],
+    "important_facts": [
+      "serverless executa código apenas quando disparado",
+      "plataformas gerenciam infraestrutura",
+      "custo depende de execução e latência"
+    ]
+  },
+  {
+    "id": "question_12",
+    "question": "Compare as arquiteturas monolítica e microserviços para aplicações de médio e grande porte.",
+    "expected_criteria": [
+      "acoplamento e escalabilidade",
+      "operabilidade e custos",
+      "quando cada uma é preferível"
+    ],
+    "important_facts": [
+      "monolito é mais simples de operar inicialmente",
+      "microserviços aumentam modularidade e isolamento",
+      "microserviços exigem mais operação e observabilidade"
+    ]
+  },
+  {
+    "id": "question_13",
+    "question": "Explique a diferença entre observabilidade, monitoramento e logging em sistemas distribuídos.",
+    "expected_criteria": [
+      "definições e propósito",
+      "métricas, logs e traces",
+      "uso na operação de sistemas"
+    ],
+    "important_facts": [
+      "monitoramento coleta sinais de saúde",
+      "logs capturam eventos detalhados",
+      "traces ajudam a seguir requisições em serviços interdependentes"
+    ]
+  },
+  {
+    "id": "question_14",
+    "question": "Quais são os principais desafios de implantação de modelos de linguagem em produção?",
+    "expected_criteria": [
+      "latência e custo",
+      "segurança e confiabilidade",
+      "monitoramento e ajustes"
+    ],
+    "important_facts": [
+      "latência e custo são fatores críticos",
+      "prompt injection e segurança são preocupações",
+      "observabilidade ajuda em correções e manutenção"
+    ]
+  },
+  {
+    "id": "question_15",
+    "question": "Compare event sourcing e modelo CRUD tradicional em sistemas de negócio.",
+    "expected_criteria": [
+      "histórico de eventos",
+      "complexidade e auditoria",
+      "quando adotar cada padrão"
+    ],
+    "important_facts": [
+      "event sourcing guarda sequência de eventos",
+      "CRUD mantém estado atual direto",
+      "event sourcing é útil para auditoria e reprocessamento"
+    ]
+  },
+  {
+    "id": "question_16",
+    "question": "Quais são as diferenças entre autenticação e autorização em aplicações web?",
+    "expected_criteria": [
+      "identificação do usuário",
+      "permissões e políticas",
+      "segurança e fluxo típico"
+    ],
+    "important_facts": [
+      "autenticação verifica quem é o usuário",
+      "autorização decide o que ele pode fazer",
+      "ambos são necessários em sistemas seguros"
+    ]
+  },
+  {
+    "id": "question_17",
+    "question": "Explique por que testes automatizados são críticos em pipelines de CI/CD e como eles reduzem riscos.",
+    "expected_criteria": [
+      "detecção precoce de regressões",
+      "qualidade e confiança",
+      "integração em pipelines"
+    ],
+    "important_facts": [
+      "testes automatizados ajudam a detectar regressões cedo",
+      "CI/CD depende de validação contínua",
+      "testes reduz riscos ao liberar software"
+    ]
+  },
+  {
+    "id": "question_18",
+    "question": "Compare programação síncrona e assíncrona em I/O intensivo e quais problemas ela resolve.",
+    "expected_criteria": [
+      "blocking versus non-blocking",
+      "escalabilidade de requisições",
+      "complexidade de controle de fluxo"
+    ],
+    "important_facts": [
+      "síncrono bloqueia execução até completar",
+      "assíncrona melhora throughput em operações lentas",
+      "assíncrona traz complexidade de concorrência"
+    ]
+  },
+  {
+    "id": "question_19",
+    "question": "Explique como RAG combina recuperação de contexto com geração de linguagem e quando ele é útil.",
+    "expected_criteria": [
+      "recuperação do contexto",
+      "geração com base em documentos",
+      "casos de uso e limitações"
+    ],
+    "important_facts": [
+      "RAG recupera documentos relevantes antes da resposta",
+      "reduz alucinações quando a base é boa",
+      "depende da qualidade do índice e da recuperação"
+    ]
+  },
+  {
+    "id": "question_20",
+    "question": "Compare ferramentas de busca web e busca interna em corpora empresariais para suporte de decisão.",
+    "expected_criteria": [
+      "cobertura e contexto",
+      "privacidade e controle",
+      "adequação para casos corporativos"
+    ],
+    "important_facts": [
+      "busca web cobre uma ampla variedade de fontes públicas",
+      "busca interna oferece contexto corporativo",
+      "segurança e governança importam para dados internos"
+    ]
+  }
+]
